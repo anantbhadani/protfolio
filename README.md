@@ -161,7 +161,7 @@ protfolio/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/anantbhadani/protfolio.git
 cd protfolio
 ```
 
@@ -431,9 +431,6 @@ The portfolio automatically fetches and displays your GitHub repositories! Proje
 - [ ] Add service worker for offline support
 - [ ] Implement PWA features
 
-## 📝 License
-
-This project is private and all rights reserved.
 
 ## 👤 Author
 
