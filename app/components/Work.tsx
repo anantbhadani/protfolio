@@ -233,7 +233,7 @@ const Work: React.FC<WorkProps> = ({ isDarkMode }) => {
         ) : (
           <>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-6 gap-5' role="list">
-              {displayedProjects.map((project, index) => (
+              {displayedProjects.map((project) => (
                 <article
                   key={project.id}
                   className='aspect-square rounded-lg 
