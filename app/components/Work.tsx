@@ -98,7 +98,7 @@ const Work: React.FC<WorkProps> = ({ isDarkMode }) => {
     return colors[language || ''] || '#6b7280';
   };
 
-  const getProjectBackground = (project: GitHubProject, index: number) => {
+  const getProjectBackground = (project: GitHubProject) => {
     // Language-based gradient backgrounds
     const gradients: Record<string, string> = {
       JavaScript: 'linear-gradient(135deg, #f7df1e 0%, #f0c929 50%, #e8b413 100%)',
@@ -241,7 +241,7 @@ const Work: React.FC<WorkProps> = ({ isDarkMode }) => {
                       focus-within:ring-2 focus-within:ring-gray-400 dark:focus-within:ring-gray-500
                       overflow-hidden shadow-lg'
                   style={{ 
-                    background: getProjectBackground(project, index),
+                    background: getProjectBackground(project),
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                   }}

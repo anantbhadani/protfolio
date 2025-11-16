@@ -1,10 +1,6 @@
 import React from 'react';
 
-interface TechStackProps {
-  isDarkMode: boolean;
-}
-
-const TechStack: React.FC<TechStackProps> = ({ isDarkMode }) => {
+const TechStack: React.FC = () => {
   const techCategories = [
     {
       category: 'Frontend',

@@ -104,7 +104,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
             ))}
           </ul>
 
-          <TechStack isDarkMode={isDarkMode} />
+          <TechStack />
         </div>
       </div>
     </section>

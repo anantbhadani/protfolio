@@ -45,7 +45,7 @@ export async function GET() {
 
     // Filter and format repositories
     const formattedRepos = repos
-      .filter((repo) => {
+      .filter(() => {
         // Optionally filter out forks or specific repos
         // return !repo.fork && repo.name !== 'protfolio';
         return true; // Include all repos for now
