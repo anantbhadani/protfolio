@@ -52,12 +52,22 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
       return;
     }
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    // Get access key from environment or use fallback for development
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 
+      (process.env.NODE_ENV === 'development' ? '9848e1e2-1e3f-4b2e-9c8d-b4e3683bba39' : null);
     
     if (!accessKey) {
-      toast.error("Contact form is not configured. Please set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your environment variables.");
+      toast.error(
+        "Contact form is not configured. Please set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your .env.local file. " +
+        "Get your key from https://web3forms.com"
+      );
       setIsSubmitting(false);
       return;
+    }
+    
+    // Warn in development if using fallback key
+    if (process.env.NODE_ENV === 'development' && !process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY) {
+      console.warn('⚠️ Using fallback Web3Forms key. Please set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in .env.local for production.');
     }
 
     // Create new FormData with sanitized values
